@@ -1,4 +1,15 @@
 version: '3'
 services:
   my-service:
-    image: labdockerjadebettoya
+    image: jadebettoya/lab-docker-jadebettoya:latest
+    ports:
+      - "8080:5000"
+    environment:
+      - BACKEND_HOST=my-service
+
+  my-frontend:
+    image: your-frontend-image:latest
+    ports:
+      - "80:80"
+    environment:
+      - FRONTEND_VARIABLE=value
